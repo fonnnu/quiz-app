@@ -1,0 +1,24 @@
+# Node modules
+**/node_modules/
+
+# Local env files
+**/.env
+.env
+
+# Service account key (keep out of GitHub)
+exam-site-backend/service-account-key.json
+
+# Build outputs
+**/dist/
+**/build/
+
+# Logs
+*.log
+**/logs/
+
+# Editor/OS
+.DS_Store
+.cursor
+.vscode/
+.idea/
+
