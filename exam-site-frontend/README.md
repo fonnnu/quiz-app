@@ -1,5 +1,39 @@
-# Vue 3 + Vite
+# 📚 Google Sheets Linked Quiz System
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+GoogleスプレッドシートをCMS（管理画面）として活用した、学習用クイズアプリケーションです。
+塾の生徒様が、PCやスマホからいつでも手軽に英単語学習を行える環境を目指して構築しました。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🌐 Live Demo
+**[アプリを体験する](https://quiz-app-six-teal-44.vercel.app/)**
+※バックエンドはRender（無料プラン）を使用しているため、最初の読み込みに15〜30秒ほどかかる場合があります。
+
+## 📝 プロジェクト概要
+「クイズの内容を頻繁に更新したいが、そのたびにコードを修正するのは非効率」という実務上の課題を解決するために開発しました。
+講師が使い慣れたGoogleスプレッドシートを編集するだけで、プログラムの知識がなくてもリアルタイムにアプリの内容を更新できる仕組みを実現しています。
+
+## 🛠 使用技術
+
+### Frontend
+- **Vue.js 3 (Composition API)**
+- **Vite** (ビルドツール)
+- **Tailwind CSS** (スタイリング)
+- **Vercel** (ホスティング)
+
+### Backend
+- **Node.js / Express**
+- **Google Sheets API v4**
+- **Render** (ホスティング)
+
+### Database
+- **Google Sheets** (スプレッドシート)
+
+## ✨ 主な機能
+1. **スプレッドシート同期**: タブ名が自動的にクイズカテゴリとしてメニューに反映されます。
+2. **レスポンシブデザイン**: スマートフォン、タブレット、PCのすべてのデバイスに最適化。
+3. **環境切り替え**: `.env`と環境変数を活用し、ローカル開発環境と本番環境の接続先を自動切り替え。
+4. **堅牢なエラーハンドリング**: API通信のタイムアウト制御や、認証エラーの適切な表示を実装。
+
+## 🏗 システム構成図
+```text
+[ Google Sheets ]  <-- (API) -->  [ Node.js (Render) ]  <-- (API) -->  [ Vue.js (Vercel) ]
+      (DB)                             (Backend)                         (Frontend)
