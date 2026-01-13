@@ -36,12 +36,14 @@ GoogleスプレッドシートをCMS（管理画面）として活用した、�
 | **Backend** | Node.js, Express, Render |
 | **Data Source** | Google Sheets API v4 |
 
+### 📸 スクリーンショット
+![Top Page](https://github.com/user-attachments/assets/2cfbd678-ab19-439b-92cb-38b621b3ce0f)
+![Quiz View 1](https://github.com/user-attachments/assets/e8ad462c-9740-4e0a-b0d3-bc4de13d2582)
+![Quiz View 2](https://github.com/user-attachments/assets/e66f4b40-3374-42ab-a4ab-aa461cbd71c5)
+
 ## 🏗 システム構成
 ```text
 [ Google Sheets ]  <-- (API) -->  [ Node.js (Render) ]  <-- (API) -->  [ Vue.js (Vercel) ]
       (DB)                             (Backend)                         (Frontend)
 
-### 📸 スクリーンショット
-![Top Page](https://github.com/user-attachments/assets/2cfbd678-ab19-439b-92cb-38b621b3ce0f)
-![Quiz View 1](https://github.com/user-attachments/assets/e8ad462c-9740-4e0a-b0d3-bc4de13d2582)
-![Quiz View 2](https://github.com/user-attachments/assets/e66f4b40-3374-42ab-a4ab-aa461cbd71c5)
+
