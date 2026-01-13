@@ -29,7 +29,13 @@ const fetchQuestions = async () => {
   try {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 10000)
-    const response = await fetch(`http://localhost:3000/api/questions?category=${encodeURIComponent(props.category)}`, { signal: controller.signal })
+
+    // 1. 環境変数からURLを取得
+    const API_URL = import.meta.env.VITE_API_URL;
+
+    // 2. `${API_URL}` を使って、後ろにクエリ（?category=...）を繋げる
+    const response = await fetch(`${API_URL}/questions?category=${encodeURIComponent(props.category)}`, { signal: controller.signal })
+
     clearTimeout(timeoutId)
     if (!response.ok) throw new Error('取得失敗')
     questions.value = await response.json()

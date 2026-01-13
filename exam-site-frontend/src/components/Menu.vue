@@ -17,7 +17,12 @@ const fetchMenuList = async () => {
   try {
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 10000)
-    const response = await fetch('http://localhost:3000/api/categories', { signal: controller.signal })
+
+    // 1. 環境変数からURLを取得（VITE_が付いているので Vite が自動認識します）
+    const API_URL = import.meta.env.VITE_API_URL;
+    // 2. `${API_URL}` を使って fetch する
+    const response = await fetch(`${API_URL}/categories`, { signal: controller.signal })
+    
     clearTimeout(timeoutId)
     if (!response.ok) throw new Error('取得失敗')
     rawData.value = await response.json()
