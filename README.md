@@ -37,7 +37,6 @@ GoogleスプレッドシートをCMS（管理画面）として活用した、�
 | **Data Source** | Google Sheets API v4 |
 
 ## 🏗 システム構成
-[ Image of web application architecture showing Vue.js frontend, Node.js backend, and Google Sheets API integration ]
 ```text
 [ Google Sheets ]  <-- (API) -->  [ Node.js (Render) ]  <-- (API) -->  [ Vue.js (Vercel) ]
       (DB)                             (Backend)                         (Frontend)
