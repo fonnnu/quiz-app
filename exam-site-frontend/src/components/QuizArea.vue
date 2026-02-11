@@ -72,12 +72,6 @@ const checkChoiceAnswer = (q, index) => {
   
   const isCorrect = String(index + 1) === String(q.correctAnswer)
   results.value[q.id] = { isCorrect, userAnswer: index }
-  // 回答後に自動で次のカードへ（最後のカード以外）
-  if (currentQuestion.value && currentQuestion.value.id === q.id) {
-    if (currentIndex.value < questions.value.length - 1) {
-      setTimeout(() => { goNext() }, 450)
-    }
-  }
 }
 
 // ■ 【並び替え】の選択処理 (単語をクリックした時)
@@ -117,12 +111,6 @@ const submitSortAnswer = (q) => {
 
   // 結果を保存
   results.value[q.id] = { isCorrect, userAnswer: userString }
-  // 提出後に自動で次のカードへ（最後のカード以外）
-  if (currentQuestion.value && currentQuestion.value.id === q.id) {
-    if (currentIndex.value < questions.value.length - 1) {
-      setTimeout(() => { goNext() }, 450)
-    }
-  }
 }
 
 //全問正解したかどうか
@@ -406,7 +394,16 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- ナビゲーションは自動遷移のため非表示 -->
+      <!-- ナビゲーション（次へ） -->
+      <div class="nav-actions">
+        <button
+          class="next-btn"
+          :disabled="!canGoNext || currentIndex === questions.length - 1"
+          @click="goNext"
+        >
+          次へ
+        </button>
+      </div>
     </div>
     <p v-else>データがありません。</p>
   </div>
@@ -512,7 +509,18 @@ onMounted(() => {
 .review-btn { background: #f3f4f6; color: var(--text); border: 1px solid var(--border); padding: 10px 16px; border-radius: 10px; }
 .finish-btn { background: var(--brand); color: #fff; border: none; padding: 10px 16px; border-radius: 10px; }
 
-/* Card navigation removed (auto-advance) */
+/* Card navigation */
+.nav-actions { display: flex; justify-content: flex-end; margin-top: 12px; }
+.next-btn {
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+}
+.next-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* Loading skeleton & error */
 .skeleton-wrap { display: grid; gap: 16px; }

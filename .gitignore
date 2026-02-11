@@ -22,3 +22,7 @@ exam-site-backend/service-account-key.json
 .vscode/
 .idea/
 
+# 大事な設定ファイルを無視
+.env
+.env.local
+.env.*.local

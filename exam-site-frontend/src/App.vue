@@ -20,7 +20,7 @@ const onBack = () => {
   <div class="app-wrapper">
     <header class="topbar">
       <div class="topbar-inner">
-        <div class="brand">英語学習アプリ</div>
+        <div class="brand">西南ゼミ</div>
       </div>
     </header>
     <div class="content">

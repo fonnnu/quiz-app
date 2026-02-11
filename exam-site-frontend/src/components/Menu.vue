@@ -61,7 +61,7 @@ onMounted(fetchMenuList)
 
 <template>
   <div class="menu-wrap">
-    <h2 class="menu-title">クイズを選ぶ</h2>
+    <h2 class="menu-title">問題を選ぶ</h2>
 
     <div class="search-wrap">
       <div class="search-field">
